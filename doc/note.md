@@ -14,4 +14,8 @@ Expo 是一个开源框架，用于使用 JavaScript 和 React 构建跨平台�
 ```sh
 npx create-expo-app@latest my-app
 brew install watchman # 监视文件系统更改
+npm install -g eas-cli # 云构建
+eas login
+eas build:configure # 创建EAS配置文件
+eas device:create
 ```
