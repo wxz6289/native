@@ -1,3 +1,4 @@
+import PlaceholderImage from '@/assets/images/background-image.png';
 import Button from '@/components/Button';
 import CircleButton from '@/components/CircleButton'; // Adjust the import path as necessary
 import EmojiList from '@/components/EmojiList';
@@ -12,7 +13,6 @@ import { useRef, useState } from 'react';
 import { ImageSourcePropType, Platform, StyleSheet, View } from "react-native";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { captureRef } from 'react-native-view-shot';
-const PlaceholderImage = require('@/assets/images/background-image.png');
 
 export default function Index() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -56,7 +56,7 @@ export default function Index() {
           height: 440,
           quality: 1,
         });
-         await saveToLibraryAsync(localUri);
+        await saveToLibraryAsync(localUri);
         if (localUri) {
           alert('Image saved to library');
           console.log('Image saved to library:', localUri);
@@ -79,8 +79,8 @@ export default function Index() {
         }
       }
     } catch (error) {
-        console.error('Error saving image:', error);
-      }
+      console.error('Error saving image:', error);
+    }
   };
 
   const onAddSticker = () => {
@@ -98,7 +98,7 @@ export default function Index() {
           <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
           {pickedEmoji && <EmojiSticker imageSize={40} stickerSource={pickedEmoji} />}
         </View>
-        </View>
+      </View>
       {showOptions ? (<View style={styles.optionsContainer}>
         <View style={styles.optionsRow}>
           <IconButton icon="refresh" label="Reset" onPress={onReset} />

@@ -1,3 +1,4 @@
+import { ThemedText } from '@/components/ThemedText';
 import { Link, Stack } from "expo-router";
 import { StyleSheet, View } from "react-native";
 
@@ -15,6 +16,9 @@ export default function NotFound() {
       <View style={styles.container}>
         <Link href="/" style={styles.button}>
           Go to Home
+        </Link>
+        <Link href="/" style={styles.link}>
+          <ThemedText type="link">Go to home screen!</ThemedText>
         </Link>
       </View>
     </>
@@ -40,4 +44,16 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     backgroundColor: "#007AFF",
   },
+  link: {
+    fontSize: 16,
+    lineHeight: 36,
+    textDecorationLine: "underline",
+    color: "#007AFF",
+    marginTop: 12,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    paddingBottom: 8,
+    borderRadius: 4,
+  }
 });
+

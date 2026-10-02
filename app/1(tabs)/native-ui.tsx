@@ -1,9 +1,17 @@
+import { SetStateAction, useState } from 'react';
 import { ScrollView, StyleSheet, Text, TextInput } from 'react-native';
+
 export default function NativeUI() {
+  const [value, setInputValue] = useState('Hello World!');
+
+  const handleChange = (e: { nativeEvent: { text: SetStateAction<string>; }; }) => {
+    setInputValue(e.nativeEvent.text);
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Welcome to Native UI</Text>
-      <TextInput placeholder="Type here..." defaultValue='Hello World!' style={styles.input} />
+      <TextInput keyboardType='url' multiline editable value={value} onChange={handleChange} placeholder="Type here..." defaultValue='Hello World!' style={styles.input} />
     </ScrollView>
   );
 }
